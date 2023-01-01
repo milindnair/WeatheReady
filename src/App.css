@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+  }
+
+  .body{
+    background-color:red;
+  }
+  .css-t0zib5-MuiGrid-root{
+    background-image:url('/src/assets/mountain.svg');
+    background-repeat: no-repeat;
+    background-size: 100vw;    
+    background-color:red;
+    animation: css-t0zib5-MuiGrid-root 10s linear infinite;
+    z-index: -1;
+  }
+  
+
+  @keyframes css-t0zib5-MuiGrid-root{
+    50%{
+        background-color:yellow;
+    }
+    65%{
+        background-color: #ffb90f;
+    }
+    85%{
+        background-color: #b39300;
+    }
+    100%{
+        background-color: #68228b;
+    }
+}
+
