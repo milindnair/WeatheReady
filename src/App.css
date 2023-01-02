@@ -2,21 +2,22 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* overflow-y: hidden; */
 
   }
 
   .body{
     background-color:red;
   }
-  .css-t0zib5-MuiGrid-root{
-    background-image:url('/src/assets/mountain.svg');
+  /* .css-t0zib5-MuiGrid-root{
+    background-image:url('/bg-building.png');
     background-repeat: no-repeat;
     background-size: 100vw;    
     background-color:red;
     animation: css-t0zib5-MuiGrid-root 10s linear infinite;
     z-index: -1;
   }
-  
+   */
 
   @keyframes css-t0zib5-MuiGrid-root{
     50%{

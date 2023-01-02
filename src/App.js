@@ -14,11 +14,18 @@ import Select from "@mui/material/Select";
 import Paper from "@mui/material/Paper";
 import './App.css';
 import Sun from './sun.js';
-
+import Building from './building.js';
+import Search from './Search.js';
 
 
 
 export default function App() {
+
+  const handleOnSearchChange = (searchData) => {
+    console.log(searchData);
+  };
+
+
   return (
   <Grid>
     <Sun />
@@ -27,15 +34,17 @@ export default function App() {
     alignItems="center"
     direction="column"
     style={{ minHeight: "100vh" }}>
-    <TextField 
+    {/* <TextField 
     id="outlined-search"
     label="Search field" 
     type="search" 
+    onChange={(e) => {handleOnSearchChange()}}
     style={{
       minWidth:"30vw",
       marginTop:"10vh",
     }}
-    />
+    /> */}
+    <Search onSearchChange={handleOnSearchChange}/>
     <Card style={{
         height:"70vh",
       }}
@@ -94,7 +103,9 @@ export default function App() {
     <CardActions>
     </CardActions>
   </Card>
+  
   </Grid>
+  <Building />
   </Grid>
   );
 }
