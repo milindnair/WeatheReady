@@ -54,11 +54,12 @@ export default function App() {
       my: "5vh",
       
        }}>
-    <CardMedia
-      sx={{ height: 380}}
-      image="/static/images/cards/contemplative-reptile.jpg"
-      title="green iguana"
-    />
+
+    <CardContent  sx={{ height: 380}}>
+          <Typography >Mumbai</Typography>
+          <Typography >Sunny</Typography>
+    </CardContent>
+
     <CardContent>
     <FormControl fullWidth>
     <InputLabel id="inputType-label">Select Day</InputLabel>
