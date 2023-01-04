@@ -6,7 +6,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
-import TextField from '@mui/material/TextField';
+import TextField from '@mui/material/TextField'
 import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
 import MenuItem from "@mui/material/MenuItem";
@@ -16,97 +16,122 @@ import './App.css';
 import Sun from './sun.js';
 import Building from './building.js';
 import Search from './Search.js';
-
+import { flexbox } from '@mui/system';
+import Box from '@mui/material/Box';
+import {weatherApiUrl} from './api.js';
+import {weatherApiKey } from './api.js';
+import {useState} from 'react';
+import CurrentWeather from './CurrentWeather';
 
 
 export default function App() {
 
+  const [Currentweather, setCurrentWeather] = useState(null);
+  const [forecast, setforecast] = useState(null);
+
   const handleOnSearchChange = (searchData) => {
-    console.log(searchData);
+    const[lat,lon] = searchData.value.split(" ");
+
+    const currentWeatherFetch = fetch(`${weatherApiUrl}/weather?lat=${lat}&lon=${lon}&appid=${weatherApiKey}`)
+    const weatherForecast = fetch(`${weatherApiUrl}/forecast?lat=${lat}&lon=${lon}&appid=${weatherApiKey}`)
+    Promise.all([currentWeatherFetch, weatherForecast])
+    .then(async (response) => {
+      const weatherResponse = await response[0].json();
+      const forecastResponse = await response[1].json();
+
+      setCurrentWeather({city:searchData.label, ...weatherResponse});
+      setforecast({city:searchData.label,...forecastResponse});
+    })
+    .catch((err) => console.log(err));
+  
   };
 
+  console.log(Currentweather);
+  console.log(forecast);
 
   return (
-  <Grid>
-    <Sun />
-     <Grid   container 
-    justify="center"
-    alignItems="center"
-    direction="column"
-    style={{ minHeight: "100vh" }}>
-    {/* <TextField 
-    id="outlined-search"
-    label="Search field" 
-    type="search" 
-    onChange={(e) => {handleOnSearchChange()}}
-    style={{
-      minWidth:"30vw",
-      marginTop:"10vh",
-    }}
-    /> */}
-    <Search onSearchChange={handleOnSearchChange}/>
-    <Card style={{
-        height:"70vh",
-      }}
-    sx={{ 
-      maxWidth: 545,
-      minWidth:500,
-      my: "5vh",
-      
-       }}>
+    <Grid>
+      <Grid container
+        justifyContent="center"
+        alignItems="center"
+        direction="column"
+        style={{ minHeight: "100vh" }}>
+        <Search onSearchChange={handleOnSearchChange} />
+        <Card
+          justifyContent="center" alignItems="center"
+          style={{
+            height: "70vh",
+          }}
+          sx={{
+            maxWidth: 545,
+            minWidth: 500,
+            my: "5vh",
 
-    <CardContent  sx={{ height: 380}}>
-          <Typography >Mumbai</Typography>
-          <Typography >Sunny</Typography>
-    </CardContent>
+          }}>
 
-    <CardContent>
-    <FormControl fullWidth>
-    <InputLabel id="inputType-label">Select Day</InputLabel>
-      <Select
-                      labelId="inputType-label"
-                      id="inputType"
-                      // value={Day}
-                      // label="From"
-                      // onChange={(e) => {
-                      //   setInputType(e.target.value);
-                      // }}
-                    >
-                      <MenuItem value="Monday">Monday</MenuItem>
-                      <MenuItem value="Tuesday">Tuesday</MenuItem>
-                      <MenuItem value="Wednesday">Wednesday</MenuItem>
-                      <MenuItem value="Thursday">Thursday</MenuItem>
-                      <MenuItem value="Friday">Friday</MenuItem>
-                      <MenuItem value="Saturday">Saturday</MenuItem>
-                      <MenuItem value="Sunday">Sunday</MenuItem>
-      </Select>
-    </FormControl>
-    <Grid item xs={12}>
-        <Grid container justifyContent="center" spacing={2}>
-          {[0, 1, 2].map((value) => (
-            <Grid key={value} item>
-              <Paper
-                sx={{
-                  height: 140,
-                  width: 120,
-                  padding : 2,
-                  marginTop:2,
-                  backgroundColor: (theme) =>
-                    theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-                }}
+          {/* <CardContent sx={{ height: 380 }} >
+            <Grid style={{ display: flexbox, flexDirection: 'column' }}>
+              <Typography variant='h4' >Mumbai</Typography>
+              <CardMedia
+                component="img"
+                height="100"
+                image={require("/home/milind/Desktop/weatherify/WeatheReady/src/assets/01d.png")}
+                alt="weather icon"
               />
+              <Typography variant='h3'>Sunny</Typography>
             </Grid>
-          ))}
-        </Grid>
-        </Grid>
+            <Grid>
+              <Typography variant='h1'>19°C</Typography>
+              <Typography variant='h5'>Feels like 19°C</Typography>
+              <Typography variant='h5'>Humidity 19%</Typography>
+              <Typography variant='h5'>Wind 19km/h</Typography>
+              <Typography variant='h5'>Pressure 19hPa</Typography>
+            </Grid>
 
-    </CardContent>
-    <CardActions>
-    </CardActions>
-  </Card>
-  
-  </Grid>
-  <Building />
-  </Grid>
+          </CardContent> */}
+          <CurrentWeather/>
+
+
+          <CardContent>
+            <Grid item xs={12}>
+              <Box
+                sx={{
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  '& > :not(style)': {
+                    m: 1,
+                    width: 128,
+                    height: 158,
+                    marginTop: "2.5rem",
+
+                  },
+                }}
+              >
+                <Paper elevation={5}>
+                  <Typography variant="h5" align="center">Mon</Typography>
+                  <img src={require("/home/milind/Desktop/weatherify/WeatheReady/src/assets/01d.png")} style={{ height: 80, marginInlineStart: 20 }}></img>
+                  <Typography variant="h5" align="center">19°C</Typography>
+                </Paper>
+                <Paper elevation={5}>
+                  <Typography variant="h5" align="center">Tue</Typography>
+                  <img src={require("/home/milind/Desktop/weatherify/WeatheReady/src/assets/01d.png")} style={{ height: 80, marginInlineStart: 20 }}></img>
+                  <Typography variant="h5" align="center">19°C</Typography>
+                </Paper>
+                <Paper elevation={5}>
+                  <Typography variant="h5" align="center">Wed</Typography>
+                  <img src={require("/home/milind/Desktop/weatherify/WeatheReady/src/assets/01d.png")} style={{ height: 80, marginInlineStart: 20 }}></img>
+                  <Typography variant="h5" align="center">19°C</Typography>
+                </Paper>
+              </Box>
+            </Grid>
+
+          </CardContent>
+          <CardActions>
+          </CardActions>
+        </Card>
+
+      </Grid>
+      <Building />
+    </Grid>
   );
 }
