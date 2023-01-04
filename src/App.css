@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     /* overflow-y: hidden; */
+  
 
   }
 
@@ -39,18 +40,4 @@
   }
    */
 
-  @keyframes css-t0zib5-MuiGrid-root{
-    50%{
-        background-color:yellow;
-    }
-    65%{
-        background-color: #ffb90f;
-    }
-    85%{
-        background-color: #b39300;
-    }
-    100%{
-        background-color: #68228b;
-    }
-}
 

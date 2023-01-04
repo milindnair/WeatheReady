@@ -1,10 +1,18 @@
-import './sun.css';
-const Sun = () =>{
+import {Canvas} from '@react-three/fiber';
+import {OrbitControls} from '@react-three/drei';
+import {Suspense} from 'react';
+import {Model} from './Scene';
+
+function Sun()
+{
     return(
-        <div className="object">
-        <div className="sun"></div>
-        <div className="moon"></div>
-        </div>
+        <Canvas>
+            <ambientLight />
+            <OrbitControls />
+            <Suspense fallback={null}>
+                <Model />
+            </Suspense>
+        </Canvas>
     )
 }
 

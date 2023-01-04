@@ -10,26 +10,27 @@ import { flexbox } from "@mui/system";
 // import { weatherApiUrl } from "./api";
 
 
-const CurrentWeather = () => {
+const CurrentWeather = ({ data }) => {
+    console.log(data);
     return (
         <Card>
             <CardContent sx={{ height: 380 }} >
             <Grid style={{ display: flexbox, flexDirection: 'column' }}>
-              <Typography variant='h4' >Mumbai</Typography>
+              <Typography variant='h4' >{data.city}</Typography>
               <CardMedia
                 component="img"
                 height="100"
                 image={require("/home/milind/Desktop/weatherify/WeatheReady/src/assets/01d.png")}
                 alt="weather icon"
               />
-              <Typography variant='h3'>Sunny</Typography>
+              <Typography variant='h3'>{data.weather[0].description}</Typography>
             </Grid>
             <Grid>
-              <Typography variant='h1'>19°C</Typography>
-              <Typography variant='h5'>Feels like 19°C</Typography>
-              <Typography variant='h5'>Humidity 19%</Typography>
-              <Typography variant='h5'>Wind 19km/h</Typography>
-              <Typography variant='h5'>Pressure 19hPa</Typography>
+              <Typography variant='h1'>{Math.round(data.main.temp)}°C</Typography>
+              <Typography variant='h5'>{Math.round(data.main.feels_like)}°C</Typography>
+              <Typography variant='h5'>{data.main.humidity}%</Typography>
+              <Typography variant='h5'>{data.wind.speed} m/s</Typography>
+              <Typography variant='h5'>{data.main.pressure} hPa</Typography>
             </Grid>
 
           </CardContent>

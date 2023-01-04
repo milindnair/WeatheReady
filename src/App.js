@@ -26,38 +26,43 @@ import CurrentWeather from './CurrentWeather';
 
 export default function App() {
 
-  const [Currentweather, setCurrentWeather] = useState(null);
-  const [forecast, setforecast] = useState(null);
+  const [currentWeather, setCurrentWeather] = useState(null);
+  const [forecast, setForecast] = useState(null);
 
   const handleOnSearchChange = (searchData) => {
-    const[lat,lon] = searchData.value.split(" ");
+    const [lat, lon] = searchData.value.split(" ");
 
-    const currentWeatherFetch = fetch(`${weatherApiUrl}/weather?lat=${lat}&lon=${lon}&appid=${weatherApiKey}`)
-    const weatherForecast = fetch(`${weatherApiUrl}/forecast?lat=${lat}&lon=${lon}&appid=${weatherApiKey}`)
-    Promise.all([currentWeatherFetch, weatherForecast])
-    .then(async (response) => {
-      const weatherResponse = await response[0].json();
-      const forecastResponse = await response[1].json();
+    const currentWeatherFetch = fetch(
+      `${weatherApiUrl}/weather?lat=${lat}&lon=${lon}&appid=${weatherApiKey}&units=metric`
+    );
+    const forecastFetch = fetch(
+      `${weatherApiUrl}/forecast?lat=${lat}&lon=${lon}&appid=${weatherApiKey}&units=metric`
+    );
 
-      setCurrentWeather({city:searchData.label, ...weatherResponse});
-      setforecast({city:searchData.label,...forecastResponse});
-    })
-    .catch((err) => console.log(err));
-  
+    Promise.all([currentWeatherFetch, forecastFetch])
+      .then(async (response) => {
+        const weatherResponse = await response[0].json();
+        const forcastResponse = await response[1].json();
+
+        setCurrentWeather({ city: searchData.label, ...weatherResponse });
+        setForecast({ city: searchData.label, ...forcastResponse });
+      })
+      .catch(console.log);
   };
 
-  console.log(Currentweather);
+  console.log(currentWeather);
   console.log(forecast);
 
   return (
     <Grid>
+      <Sun />
       <Grid container
         justifyContent="center"
         alignItems="center"
         direction="column"
         style={{ minHeight: "100vh" }}>
         <Search onSearchChange={handleOnSearchChange} />
-        <Card
+        {currentWeather && <Card
           justifyContent="center" alignItems="center"
           style={{
             height: "70vh",
@@ -89,10 +94,10 @@ export default function App() {
             </Grid>
 
           </CardContent> */}
-          <CurrentWeather/>
+           <CurrentWeather data={currentWeather}/>
 
 
-          <CardContent>
+           <CardContent>
             <Grid item xs={12}>
               <Box
                 sx={{
@@ -128,7 +133,7 @@ export default function App() {
           </CardContent>
           <CardActions>
           </CardActions>
-        </Card>
+        </Card>}
 
       </Grid>
       <Building />
