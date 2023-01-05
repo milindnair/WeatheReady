@@ -39,5 +39,15 @@
     z-index: -1;
   }
    */
-
+   .css-10dsau7-MuiGrid-root {
+    box-sizing: border-box;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin-left: -10px;
+  }
 

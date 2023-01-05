@@ -27,10 +27,10 @@ const CurrentWeather = ({ data }) => {
             </Grid>
             <Grid>
               <Typography variant='h1'>{Math.round(data.main.temp)}°C</Typography>
-              <Typography variant='h5'>{Math.round(data.main.feels_like)}°C</Typography>
-              <Typography variant='h5'>{data.main.humidity}%</Typography>
-              <Typography variant='h5'>{data.wind.speed} m/s</Typography>
-              <Typography variant='h5'>{data.main.pressure} hPa</Typography>
+              <Typography variant='h5'>Feels like{Math.round(data.main.feels_like)}°C</Typography>
+              <Typography variant='h5'>Humidity:{data.main.humidity}%</Typography>
+              <Typography variant='h5'>Wind Speed:{data.wind.speed} m/s</Typography>
+              <Typography variant='h5'>Pressure:{data.main.pressure} hPa</Typography>
             </Grid>
 
           </CardContent>

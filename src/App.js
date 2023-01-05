@@ -22,6 +22,7 @@ import {weatherApiUrl} from './api.js';
 import {weatherApiKey } from './api.js';
 import {useState} from 'react';
 import CurrentWeather from './CurrentWeather';
+import Forecast from './Forecast';
 
 
 export default function App() {
@@ -55,7 +56,7 @@ export default function App() {
 
   return (
     <Grid>
-      <Sun />
+      {/* <Sun /> */}
       <Grid container
         justifyContent="center"
         alignItems="center"
@@ -71,6 +72,7 @@ export default function App() {
             maxWidth: 545,
             minWidth: 500,
             my: "5vh",
+            borderRadius: "10px",
 
           }}>
 
@@ -97,8 +99,8 @@ export default function App() {
            <CurrentWeather data={currentWeather}/>
 
 
-           <CardContent>
-            <Grid item xs={12}>
+           <CardContent sx={{marginTop:'20px'}}>
+            {/* /* <Grid item xs={12}>
               <Box
                 sx={{
                   display: 'flex',
@@ -112,11 +114,15 @@ export default function App() {
                   },
                 }}
               >
-                <Paper elevation={5}>
-                  <Typography variant="h5" align="center">Mon</Typography>
+                
+  
+                
+                {/* <Paper elevation={5}>
+                  <Typography variant="h5" align="center">Tue</Typography>
                   <img src={require("/home/milind/Desktop/weatherify/WeatheReady/src/assets/01d.png")} style={{ height: 80, marginInlineStart: 20 }}></img>
                   <Typography variant="h5" align="center">19°C</Typography>
                 </Paper>
+                
                 <Paper elevation={5}>
                   <Typography variant="h5" align="center">Tue</Typography>
                   <img src={require("/home/milind/Desktop/weatherify/WeatheReady/src/assets/01d.png")} style={{ height: 80, marginInlineStart: 20 }}></img>
@@ -126,9 +132,10 @@ export default function App() {
                   <Typography variant="h5" align="center">Wed</Typography>
                   <img src={require("/home/milind/Desktop/weatherify/WeatheReady/src/assets/01d.png")} style={{ height: 80, marginInlineStart: 20 }}></img>
                   <Typography variant="h5" align="center">19°C</Typography>
-                </Paper>
-              </Box>
-            </Grid>
+                </Paper> */}
+              {/* </Box> */}
+            {/* </Grid> */} 
+            {forecast && <Forecast data={forecast} sx={{marginLeft:'-10px'}} />}
 
           </CardContent>
           <CardActions>
