@@ -11,31 +11,31 @@ import { flexbox } from "@mui/system";
 
 
 const CurrentWeather = ({ data }) => {
-    console.log(data);
-    return (
-        <Card>
-            <CardContent sx={{ height: 380 }} >
-            <Grid style={{ display: flexbox, flexDirection: 'column' }}>
-              <Typography variant='h4' >{data.city}</Typography>
-              <CardMedia
-                component="img"
-                height="100"
-                image={require("/home/milind/Desktop/weatherify/WeatheReady/src/assets/01d.png")}
-                alt="weather icon"
-              />
-              <Typography variant='h3'>{data.weather[0].description}</Typography>
-            </Grid>
-            <Grid>
-              <Typography variant='h1'>{Math.round(data.main.temp)}°C</Typography>
-              <Typography variant='h5'>Feels like{Math.round(data.main.feels_like)}°C</Typography>
-              <Typography variant='h5'>Humidity:{data.main.humidity}%</Typography>
-              <Typography variant='h5'>Wind Speed:{data.wind.speed} m/s</Typography>
-              <Typography variant='h5'>Pressure:{data.main.pressure} hPa</Typography>
-            </Grid>
+  console.log(data);
+  return (
+    <Card>
+      <CardContent sx={{ height: 380 }} >
+        <Grid style={{ display: flexbox, flexDirection: 'column' }}>
+          <Typography variant='h4' >{data.city}</Typography>
+          <CardMedia
+            component="img"
+            height="100"
+            image={require(`/home/milind/Desktop/weatherify/WeatheReady/src/assets/${data.weather[0].icon}.png`)}
+            alt="weather icon"
+          />
+          <Typography variant='h3'>{data.weather[0].description}</Typography>
+        </Grid>
+        <Grid>
+          <Typography variant='h1'>{Math.round(data.main.temp)}°C</Typography>
+          <Typography variant='h5'>Feels like{Math.round(data.main.feels_like)}°C</Typography>
+          <Typography variant='h5'>Humidity:{data.main.humidity}%</Typography>
+          <Typography variant='h5'>Wind Speed:{data.wind.speed} m/s</Typography>
+          <Typography variant='h5'>Pressure:{data.main.pressure} hPa</Typography>
+        </Grid>
 
-          </CardContent>
-        </Card>
-    )
+      </CardContent>
+    </Card>
+  )
 }
 
 export default CurrentWeather;

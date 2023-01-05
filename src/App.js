@@ -18,9 +18,9 @@ import Building from './building.js';
 import Search from './Search.js';
 import { flexbox } from '@mui/system';
 import Box from '@mui/material/Box';
-import {weatherApiUrl} from './api.js';
-import {weatherApiKey } from './api.js';
-import {useState} from 'react';
+import { weatherApiUrl } from './api.js';
+import { weatherApiKey } from './api.js';
+import { useState } from 'react';
 import CurrentWeather from './CurrentWeather';
 import Forecast from './Forecast';
 
@@ -61,10 +61,10 @@ export default function App() {
         alignItems="center"
         direction="column"
         style={{ minHeight: "100vh" }}>
-          
-        <Search  id="SearchComponent" style={{width:'70vw'}}onSearchChange={handleOnSearchChange} />
-        <Sun sx={{}}/>
-        {currentWeather &&<Card
+
+        <Search id="SearchComponent" style={{ width: '70vw' }} onSearchChange={handleOnSearchChange} />
+        {/* <Sun sx={{}}/> */}
+        {currentWeather && <Card
           justifyContent="center" alignItems="center"
           style={{
             height: "70vh",
@@ -97,11 +97,11 @@ export default function App() {
             </Grid>
 
           </CardContent> */}
-         
-           <CurrentWeather data={currentWeather}/>
-           
-          
-           <CardContent sx={{marginTop:'20px'}}>
+
+          <CurrentWeather data={currentWeather} />
+
+
+          <CardContent sx={{ marginTop: '20px' }}>
             {/* /* <Grid item xs={12}>
               <Box
                 sx={{
@@ -135,9 +135,9 @@ export default function App() {
                   <img src={require("/home/milind/Desktop/weatherify/WeatheReady/src/assets/01d.png")} style={{ height: 80, marginInlineStart: 20 }}></img>
                   <Typography variant="h5" align="center">19°C</Typography>
                 </Paper> */}
-              {/* </Box> */}
-            {/* </Grid> */} 
-            {forecast && <Forecast data={forecast} sx={{marginLeft:'-10px'}} />}
+            {/* </Box> */}
+            {/* </Grid> */}
+            {forecast && <Forecast data={forecast} sx={{ marginLeft: '-10px' }} />}
 
           </CardContent>
           <CardActions>
