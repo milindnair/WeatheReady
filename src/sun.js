@@ -1,19 +1,9 @@
-import {Canvas} from '@react-three/fiber';
-import {OrbitControls} from '@react-three/drei';
-import {Suspense} from 'react';
-import {Model} from './Scene';
+import Spline from '@splinetool/react-spline';
 
-function Sun()
-{
-    return(
-        <Canvas>
-            <ambientLight />
-            <OrbitControls />
-            <Suspense fallback={null}>
-                <Model />
-            </Suspense>
-        </Canvas>
-    )
+export default function App() {
+  return (
+    <div className="Sun">
+    <Spline scene="https://prod.spline.design/BvnlpGNUoGTP12dL/scene.splinecode" />
+    </div>
+  );
 }
-
-export default Sun;

@@ -56,14 +56,15 @@ export default function App() {
 
   return (
     <Grid>
-      {/* <Sun /> */}
       <Grid container
         justifyContent="center"
         alignItems="center"
         direction="column"
         style={{ minHeight: "100vh" }}>
-        <Search onSearchChange={handleOnSearchChange} />
-        {currentWeather && <Card
+          
+        <Search  id="SearchComponent" style={{width:'70vw'}}onSearchChange={handleOnSearchChange} />
+        <Sun sx={{}}/>
+        {currentWeather &&<Card
           justifyContent="center" alignItems="center"
           style={{
             height: "70vh",
@@ -96,9 +97,10 @@ export default function App() {
             </Grid>
 
           </CardContent> */}
+         
            <CurrentWeather data={currentWeather}/>
-
-
+           
+          
            <CardContent sx={{marginTop:'20px'}}>
             {/* /* <Grid item xs={12}>
               <Box
