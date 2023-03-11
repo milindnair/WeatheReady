@@ -20,7 +20,7 @@ const CurrentWeather = ({ data }) => {
           <CardMedia
             component="img"
             height="100"
-            image={require(`/home/milind/Desktop/weatherify/WeatheReady/src/assets/${data.weather[0].icon}.png`)}
+            image={require(`./assets/${data.weather[0].icon}.png`)}
             alt="weather icon"
           />
           <Typography variant='h3'>{data.weather[0].description}</Typography>

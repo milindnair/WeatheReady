@@ -101,7 +101,7 @@ export default function App() {
           <CurrentWeather data={currentWeather} />
 
 
-          <CardContent sx={{ marginTop: '20px' }}>
+          <CardContent >
             {/* /* <Grid item xs={12}>
               <Box
                 sx={{
@@ -137,7 +137,7 @@ export default function App() {
                 </Paper> */}
             {/* </Box> */}
             {/* </Grid> */}
-            {forecast && <Forecast data={forecast} sx={{ marginLeft: '-10px' }} />}
+            {forecast && <Forecast data={forecast}  />}
 
           </CardContent>
           <CardActions>

@@ -37,7 +37,7 @@ const Forecast = ({ data }) => {
             {
               <Grid item xs={12}>
 
-                <Paper className="daily-item" elevation={12} sx={{ display: 'flex', flexDirection: "column", justifyContent: 'center', alignItems: 'center', height: '200px', width: '165px', ml: '10px' }} style={{ Gradient: "red" }}>
+                <Paper className="daily-item" elevation={12} sx={{ display: 'flex', flexDirection: "column", justifyContent: 'center', alignItems: 'center', height: '200px', width: '165px', ml: '10px',marginTop:'-30px' }} style={{ Gradient: "red" }}>
                   {/* <img src={`icons/${item.weather[0].icon}.png`} className="icon-small" alt="weather" /> */}
                   <Typography className="day" variant='h4' sx={{ align: 'center' }}>{forecastDays[idx]} </Typography>
                   <Typography className="description" variant='h5'>{item.weather[0].description}</Typography>
