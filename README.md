@@ -1,6 +1,11 @@
-# Getting Started with Create React App
+# WeatheReady
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A real-time Weather app using weatherapi and React.js
+
+**Images:**
+
+![Screenshot 2023-08-18 034830](https://github.com/milindnair/WeatheReady/assets/94740613/413e3997-fc1f-45ee-a44b-e18d366c490f)
+
 
 ## Available Scripts
 
