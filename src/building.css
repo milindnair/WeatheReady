@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+.building {
+    background-image: url('/bg-building.png');
+    background-repeat: no-repeat;
+    background-size: 100vw;
+    background-position: bottom;
+    animation: building 10s linear infinite;
+    z-index: -1;
+    margin-top: -100vh;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffb90f;
+}
+
+/* 
+@keyframes building{
+    50%{
+        background-color: #ffd700;
+    }
+    65%{
+        background-color: #ffb90f;
+    }
+    85%{
+        background-color: #b39300;
+    }
+    100%{
+        background-color: #68228b;
+    }
+} */

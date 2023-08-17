@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz@1,6..72&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* overflow-y: hidden; */
+  font-family: 'Newsreader', serif !important;
+
+
+
+}
+
+.body {
+  background-color: red;
+}
+
+.css-o69gx8-MuiCardMedia-root {
+  width: 54% !important;
+}
+
+.css-p13jq0-MuiCardContent-root {
+  padding: 16px;
+  height: 380px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.css-1a8kv5x {
+  justify-content: space-around !important;
+}
+
+.css-1a8kv5x .img {
+  width: 20px !important;
+}
+
+/* .css-t0zib5-MuiGrid-root{
+    background-image:url('/bg-building.png');
+    background-repeat: no-repeat;
+    background-size: 100vw;    
+    background-color:red;
+    animation: css-t0zib5-MuiGrid-root 10s linear infinite;
+    z-index: -1;
+  }
+   */
+.css-10dsau7-MuiGrid-root {
+  box-sizing: border-box;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: -10px;
+}
+
+.css-1fdsijx-ValueContainer {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: grid;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+  overflow: hidden;
+  padding: 2px 8px;
+  box-sizing: border-box;
+  width: 70vw;
+}
+
+.css-bhp9pd-MuiPaper-root-MuiCard-root {
+  background: #614385;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #516395, #614385);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #516395, #614385);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.css-1j3wjnr-MuiPaper-root-MuiCard-root {
+  background: #614385;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #516395, #614385);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #516395, #614385);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.css-z22n19-MuiPaper-root {
+  background: #acb6e5;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #86fde8, #acb6e5);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #86fde8, #acb6e5);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
